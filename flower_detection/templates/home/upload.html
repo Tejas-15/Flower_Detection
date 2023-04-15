@@ -1,0 +1,15 @@
+{% extends "home/base.html" %}
+{% block content %}
+<!-- <h1> hello world !</h1> -->
+<!-- <form method="'POST" action="{% url 'upload' %}"></form> -->
+    <div class="container">
+        <h1>Upload Your Flower Image here</h1>
+            <form method="post" enctype="multipart/form-data", action="upload">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="file" name="uploaded_image">
+                <a><button type="submit"> Upload</button></a>
+            </form>
+    </div>
+</form> 
+{% endblock content %}

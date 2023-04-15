@@ -1,0 +1,111 @@
+{% extends "home/base.html" %}
+{% block content %}
+<div class="container">
+    <h1 align="center" style="font-family: 'Times New Roman', Times, serif; font-size: 60px;">{{flowername.flower_name}}</h1>
+    <!-- <h3 align="center" style="color: crimson;">(Scientific name : BELLIS PERENNIS)</h3> -->
+    <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button"
+            id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+        <div class="toctitle" lang="en" dir="ltr">
+            <h2 id="mw-toc-heading" style="font-family:'Courier New', Courier, monospace;"><b>Contents</b></h2><span
+                class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span>
+        </div>
+        <ul>
+            <li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span
+                        class="toctext">Introduction</span></a></li>
+            <li class="toclevel-1 tocsection-2"><a href="#Etymology"><span class="tocnumber">2</span> <span
+                        class="toctext">Etymology</span></a></li>
+            <li class="toclevel-1 tocsection-3"><a href="#Botany"><span class="tocnumber">3</span> <span
+                        class="toctext">Botany</span></a>
+                <ul>
+                    <li class="toclevel-2 tocsection-4"><a href="#Evolution"><span class="tocnumber">3.1</span>
+                            <span class="toctext">Evolution</span></a></li>
+                    <li class="toclevel-2 tocsection-5"><a href="#Species"><span class="tocnumber">3.2</span> <span
+                                class="toctext">Species</span></a></li>
+                    <li class="toclevel-2 tocsection-6"><a href="#Taxonomy"><span class="tocnumber">3.3</span> <span
+                                class="toctext">Taxonomy</span></a></li>
+                </ul>
+            </li>
+            <li class="toclevel-1 tocsection-7"><a href="#Uses"><span class="tocnumber">4</span> <span
+                        class="toctext">Uses</span></a>
+                <ul>
+                    <li class="toclevel-2 tocsection-8"><a href="#Ornamental_plants"><span class="tocnumber">4.1</span>
+                            <span class="toctext">Ornamental plants</span></a></li>
+                    <li class="toclevel-2 tocsection-9"><a href="#Cut_flowers"><span class="tocnumber">4.2</span> <span
+                                class="toctext">Cut flowers</span></a></li>
+                    <li class="toclevel-2 tocsection-10"><a href="#Medicinal_uses"><span class="tocnumber">4.3</span>
+                            <span class="toctext">Medicinal uses</span></a></li>
+                    <li class="toclevel-2 tocsection-11"><a href="#Health_benefits"><span class="tocnumber">4.4</span>
+                            <span class="toctext">Health benefits</span></a></li>
+                    <li class="toclevel-2 tocsection-12"><a href="#Perfumes_and_food"><span class="tocnumber">4.5</span>
+                            <span class="toctext">Perfumes and food</span></a></li>
+                </ul>
+            </li>
+            <li class="toclevel-1 tocsection-13"><a href="#Symbolizes"><span class="tocnumber">5</span> <span
+                        class="toctext">Symbolizes</span></a></li>
+            <li class="toclevel-1 tocsection-14"><a href="#Season_to_grow"><span class="tocnumber">6</span> <span
+                        class="toctext">Season to grow</span></a></li>
+        </ul>
+    </div>
+    <h3><span class="mw-headline" id="Introduction"
+        style="font-family:'Courier New', Courier, monospace;"><b>Introduction</b></span><span
+        class="mw-editsection"></span>
+    </h3>
+    <p>{{flowername.introduction}}</p>
+
+    <h3><span class="mw-headline" id="Etymology"
+        style="font-family:'Courier New', Courier, monospace;"><b>Etymology</b></span><span
+        class="mw-editsection"></span>
+    </h3>
+    <p>{{flowername.etymology}}</p>
+
+    <h3><span class="mw-headline" id="Botany"
+        style="font-family:'Courier New', Courier, monospace;"><b>Botany</b></span><span
+        class="mw-editsection"></span>
+    </h3>
+    <p>
+        <span class="mw-headline" id="Evolution"><b>1.) Evolution</b></span><span class="mw-editsection"></span>
+    <p>{{flowername.evolution}}</p>
+
+    <span class="mw-headline" id="Species"><b>2.) Species</b></span><span class="mw-editsection"></span>
+    <p>{{flowername.species}}</p>
+    <span class="mw-headline" id="Taxonomy"><b>3.) Taxonomy</b></span><span class="mw-editsection"></span>
+    <p> Domain : {{flowername.tax_domain}}</br>
+        Kingdom : {{flowername.tax_kingdom}}</br>
+        Phylum : {{flowername.tax_phylum}}</br>
+        Order : {{flowername.tax_order}}</br>
+        Family : {{flowername.tax_family}}</br>
+        Genus : {{flowername.tax_genus}}</p>
+    </p>
+
+    <p>
+        <h3><span class="mw-headline" id="Uses"
+                style="font-family:'Courier New', Courier, monospace;"><b>Uses</b></span><span
+                class="mw-editsection"></span></h3>
+        <span class="mw-headline" id="Ornamental_plants"><b>1.) Ornamental plants</b></span><span
+            class="mw-editsection"></span>
+        <p>{{flowername.ornamental_plants}}</p>
+
+        <span class="mw-headline" id="Cut_flowers"><b>2.) Cut flowers</b></span><span class="mw-editsection"></span>
+        <p>{{flowername.cut_flowers}}</p>
+
+        <span class="mw-headline" id="Medicinal_uses"><b>3.) Medicinal uses</b></span><span class="mw-editsection"></span>
+        <p>{{flowername.medicinal_uses}}</p>
+
+        <span class="mw-headline" id="Health_benefits"><b>4.) Health benefits</b></span><span class="mw-editsection"></span>
+        <p>{{flowername.health_benefits}}</p>
+
+        <span class="mw-headline" id="Perfumes_and_food"><b>5.) Perfumes and food</b></span><span
+        class="mw-editsection"></span>
+        <p>{{flowername.perfumes_food}}</p>
+    </p>
+
+    <h3><span class="mw-headline" id="Symbolizes"
+            style="font-family:'Courier New', Courier, monospace;"><b>Symbolizes</b></span><span
+            class="mw-editsection"></span></h3>
+    <p>{{flowername.symbolizes}}</p>
+    <h3><span class="mw-headline" id="Season_to_grow" style="font-family:'Courier New', Courier, monospace;"><b>Season
+                to
+                grow</b></span><span class="mw-editsection"></span></h3>
+    <p>{{flowername.season_to_grow}}</p>
+</div>
+{% endblock content %}

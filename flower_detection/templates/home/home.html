@@ -1,0 +1,173 @@
+{% extends "home/base.html" %}
+{% block content %}
+{% load static %}
+
+<head>
+	<!-- <#slider> -->
+	<!-- <style></style> -->
+	<div class="container">
+		<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+					aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+					aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+					aria-label="Slide 3"></button>
+				<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+					aria-label="Slide 4"></button>
+				<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+					aria-label="Slide 5"></button>
+			</div>
+
+			<div class="carousel-inner" style="background-color: #f5f5dc54;">
+				<div class="carousel-item active">
+					<img src="../../static/rose-34.jpg" class="rounded mx-auto my-5 d-block w-99" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="../../static/sunflowers-34.jpg" class="rounded mx-auto my-5 d-block w-99" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="../../static/dandelion-34.jpg" class="rounded mx-auto my-5 d-block w-99" alt="...">
+					<div class="carousel-caption d-none d-md-block ">
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="../../static/daisies-34.jpg" class="rounded mx-auto my-5 d-block w-99" alt="...">
+					<div class="carousel-caption d-none d-md-block ">
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="../../static/tulips-34.jpg" class="rounded mx-auto my-5 d-block w-99" alt="...">
+					<div class="carousel-caption d-none d-md-block ">
+					</div>
+				</div>
+			</div>
+
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+				data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+				data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
+	<br />
+	<!-- <hr class="carousel-divider"> -->
+
+
+	{% comment %} marque {% endcomment %}
+	<div class="marquee">
+		<section id="block-block-12" class="block block-block clearfix">
+			<marquee direction="left">
+				<div style="font-family: 'Times New Roman', Times, serif; font-size: 25px; font-weight: bold;">Identify
+					flowers in seconds with the click of a button on your device.</div>
+			</marquee>
+		</section>
+		<section id="block-block-17" class="block block-block clearfix">
+	</div>
+	<br />
+	<!-- <hr class="marquee-divider"> -->
+
+
+	{% comment %} upload button {% endcomment %}
+	<!-- <form method="'POST" action="{% url 'upload' %}"></form> -->
+	<div class="container">
+		<div class="col-md-12 my-5 text-center">
+			<!-- <h1>Upload</h1> -->
+			<form action="{% url 'main_home' %}" , method="POST" enctype="multipart/form-data" style="background-color: #fff8dc9e;border-radius: 15px; padding: 10px;">
+				{% csrf_token %}
+				<input type="file" name="uploaded_image">
+				<input type="submit" class="btn btn-primary" value="Upload image">
+				<!-- <button>Upload Image of a flower</button> -->
+			</form>
+		</div>
+	</div>
+	{% if messages %}
+	{% for msg in messages %}
+	<div class="container">
+		<div class="alert alert-success alert-dismissible fade show" role="alert" style="text-align: center;">
+			<strong>Hey!</strong>{{msg}}
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="container">
+		<div class="col-md-12 my-5 text-center">
+			<form action="/Test1" >
+				<button id="stat-btn" class="btn btn-secondary">CLICK TO CHECK FLOWER TYPE</button>
+			</form>
+		</div>
+	</div>
+	{% comment %} cards {% endcomment %}
+
+	<div class="container">
+		<div class="col d-flex justify-content-center">
+			<div class="card text-center mx-4">
+				<div class="card-block" style="background-color: beige;">
+					<img src="../../static/rose-3.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 style="font-weight: bold;" class="card-title">Rose</h5>
+						<p class="card-text">Scientific name :<br> ROSA</p>
+						<a href="{% url 'rose' %}" class="btn btn-info">More Information</a>
+					</div>
+				</div>
+			</div>
+			<div class="card text-center mx-4">
+				<div class="card-block" style="background-color: beige;">
+					<img src="../../static/daisy-3.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 style="font-weight: bold;" class="card-title">Daisy</h5>
+						<p class="card-text">Scientific name :<br> BELLIS PERENNIS</p>
+						<a href="{% url 'daisy' %}" class="btn btn-info">More Information</a>
+					</div>
+				</div>
+			</div>
+			<div class="card text-center mx-4">
+				<div class="card-block" style="background-color: beige;">
+					<img src="../../static/sunflower-3.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 style="font-weight: bold;" class="card-title">Sunflower</h5>
+						<p class="card-text">Scientific name :<br> HELIANTHUS</p>
+						<a href="{% url 'sunflower' %}" class="btn btn-info">More Information</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br /><br />
+		<div class="col d-flex justify-content-center">
+			<div class="card text-center mx-4">
+				<div class="card-block" style="background-color: beige;">
+					<img src="../../static/tulip-3.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 style="font-weight: bold;" class="card-title">Tulip</h5>
+						<p class="card-text">Scientific name :<br> TULIPA</p>
+						<a href="{% url 'tulip' %}" class="btn btn-info">More Information</a>
+					</div>
+				</div>
+			</div>
+			<div class="card text-center mx-4">
+				<div class="card-block" style="background-color: beige;">
+					<img src="../../static/dandelion-3.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 style="font-weight: bold;" class="card-title">Dandelion</h5>
+						<p class="card-text">Scientific name :<br> TARAXACUM</p>
+						<a href="{% url 'dandelion' %}" class="btn btn-info">More Information</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br /><br />
+	</div>
+
+</head>
+{% endblock content %}
